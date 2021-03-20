@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Lost &amp; Found</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb586209618621651</string>
+				<string>com.googleusercontent.apps.1013172577936-48b18dib253u3v4m1vqap8qqkh2khtcg</string>
+				<string>com.amir.lostandfound.payments</string>
+				<string>com.venmo.touch.v2</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>586209618621651</string>
+	<key>FacebookDisplayName</key>
+	<string>Lost&amp;Found</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-1462000771437197~2670526372</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>https://vethicsinternational6666.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Uses to collect Item Photos</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use Face ID instead of a password to access your account.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use your location to provide you tracking of last 48 hours</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Use your location to provide you tracking of last 48 hours</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Uses to allow user to search location by speaking</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Uses to save image in Photo gallery</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Uses to collect Item Photos </string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Uses to allow user to search location by speaking</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>HKGrotesk-Bold.otf</string>
+		<string>HKGrotesk-Light.otf</string>
+		<string>HKGrotesk-Medium.otf</string>
+		<string>HKGrotesk-Regular.otf</string>
+		<string>HKGrotesk-SemiBold.otf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<false/>
+	<key>UIStatusBarHidden</key>
+	<false/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>
