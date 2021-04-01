@@ -98,19 +98,20 @@ class SplashOne: UIViewController {
         apiClass().doNormalAPI(param: param, APIName: apiClass().GetAppVersion, method: "POST") { (success, errMessage, mDict) in
             DispatchQueue.main.async {
                 if success == true {
-                    print("need to update the app")
-                    let data = NSKeyedArchiver.archivedData(withRootObject: mDict)
-                    print(data)
-                    let alert=UIAlertController(title: "New Version Available", message: "Please update to continue using this app", preferredStyle: UIAlertController.Style.alert);
-                    alert.addAction(UIAlertAction(title: "Update", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction) in
-                            UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/id1509659336?mt=8")!, options: [:], completionHandler: nil)
-                        self.showingAlert = false
-                    }))
-//                    if isForce != true{
-//                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//                    }
-                    self.present(alert, animated: true, completion: {})
-                    self.showingAlert = true
+                    self.doGoToNextSplash()
+//                    print("need to update the app")
+//                    let data = NSKeyedArchiver.archivedData(withRootObject: mDict)
+//                    print(data)
+//                    let alert=UIAlertController(title: "New Version Available", message: "Please update to continue using this app", preferredStyle: UIAlertController.Style.alert);
+//                    alert.addAction(UIAlertAction(title: "Update", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction) in
+//                            UIApplication.shared.open(URL(string: "https://apps.apple.com/us/app/id1509659336?mt=8")!, options: [:], completionHandler: nil)
+//                        self.showingAlert = false
+//                    }))
+////                    if isForce != true{
+////                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+////                    }
+//                    self.present(alert, animated: true, completion: {})
+//                    self.showingAlert = true
                 } else {
                     self.doGoToNextSplash()
                 }

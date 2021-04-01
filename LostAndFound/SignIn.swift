@@ -69,15 +69,22 @@ class SignIn: UIViewController, UITextFieldDelegate, GIDSignInDelegate {
 
     //MARK:- Biometric Configure
     func doBiometricSettings() {
-        if constants().doGetBiometricStatus() == "face"  {
-            self.btnFaceID.setImage(UIImage(named: "FaceID_small"), for: .normal)
-            self.lblFaceID.text = "Face ID"
-            self.doFaceID()
-        } else if constants().doGetBiometricStatus() == "touch"  {
-            self.btnFaceID.setImage(UIImage(named: "TouchID_small"), for: .normal)
-            self.lblFaceID.text = "Touch ID"
-            self.doFaceID()
-        } else {
+        
+        if constants().doGetBiometricStatusOnOff() == "On" {
+            if constants().doGetBiometricStatus() == "face"  {
+                self.btnFaceID.setImage(UIImage(named: "FaceID_small"), for: .normal)
+                self.lblFaceID.text = "Face ID"
+                self.doFaceID()
+            } else if constants().doGetBiometricStatus() == "touch"  {
+                self.btnFaceID.setImage(UIImage(named: "TouchID_small"), for: .normal)
+                self.lblFaceID.text = "Touch ID"
+                self.doFaceID()
+            } else {
+                self.btnFaceID.isHidden = true
+                self.lblFaceID.isHidden = true
+                self.lblOr.isHidden = true
+            }
+        }else {
             self.btnFaceID.isHidden = true
             self.lblFaceID.isHidden = true
             self.lblOr.isHidden = true
@@ -161,6 +168,15 @@ class SignIn: UIViewController, UITextFieldDelegate, GIDSignInDelegate {
         } else if self.txtPassword.text!.isEmpty {
             aMessage = NSLocalizedString("enterpassword", comment: "")
         }
+//        else if (constants().isStrongPassword(sPassword: self.txtPassword.text!) == false) {
+//            aMessage = NSLocalizedString("passwordlength", comment: "")
+//            let alertController = UIAlertController(title: "Weak Password", message: aMessage, preferredStyle: .alert)
+//            alertController.view.tintColor = constants().COLOR_LightBlue
+//            let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
+//            }
+//            alertController.addAction(okAction)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
         
         if rememberMe {
             constants().doSaveUsername(sUsername: self.txtEmailMobile.text!)

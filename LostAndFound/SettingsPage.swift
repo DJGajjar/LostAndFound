@@ -5,6 +5,7 @@
 
 import UIKit
 import StoreKit
+import LocalAuthentication
 
 class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var topView : UIView!
@@ -12,6 +13,13 @@ class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var lblTitle : UILabel!
     @IBOutlet weak var SettingsCollection: UICollectionView!
 
+    @IBOutlet weak var BiometricView : UIView!
+    @IBOutlet weak var BiometricSubview : UIView!
+    @IBOutlet weak var lblBiometricTitle : UILabel!
+    @IBOutlet weak var btnFaceID : UIButton!
+    @IBOutlet weak var btnTouchID : UIButton!
+    @IBOutlet weak var btnNotNow : UIButton!
+    
     //MARK:- UIViewController Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +100,18 @@ class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionView
         }
     }
 
+    @objc func doBiometricSWitchClick(_ sender: UISwitch) {
+        if (sender.isOn == true) {
+            constants().doSaveBiometricStatusOnOff(bStatus: "On")
+            
+            if constants().doGetBiometricStatusOnOff() != "On"  && constants().doGetBiometricStatusOnOff() != "Off" {
+                constants().APPDEL.isPopup = true
+            }
+        } else {
+            constants().doSaveBiometricStatusOnOff(bStatus: "Off")
+        }
+    }
+    
     //MARK:- UICollectionView Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 2  {
@@ -141,7 +161,7 @@ class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionView
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 5
+            return 6
         case 1:
             return 4
         case 2:
@@ -198,6 +218,19 @@ class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionView
                 break
             case 4:
                 lblName.text = NSLocalizedString("changelanguage", comment: "")
+                break
+            case 5:
+                mSwitch.addTarget(self, action: #selector(self.doBiometricSWitchClick(_:)), for: .valueChanged)
+                //lblName.text = NSLocalizedString("pushnotification", comment: "")
+                lblName.text = NSLocalizedString("biometrictitle", comment: "")
+                imgArrow.isHidden = true
+                print(constants().doGetBiometricStatusOnOff())
+                if constants().doGetBiometricStatusOnOff() == "On" {
+                    mSwitch.isOn = true
+                } else {
+                    mSwitch.isOn = false
+                }
+                mSwitch.isHidden = false
                 break
             default:
                 break
@@ -303,6 +336,8 @@ class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionView
                 ivc.navFlag = 2
                 constants().APPDEL.window?.rootViewController = ivc
                 break
+            case 5:
+                break
             default:
                 break
             }
@@ -367,5 +402,58 @@ class SettingsPage: UIViewController, UICollectionViewDelegate, UICollectionView
                     break
             }
         }
+    }
+    
+    @IBAction func doFaceID() {
+        constants().APPDEL.isPopup = false
+        var error: NSError?
+        let mContext = LAContext()
+        if mContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            self.BiometricView.isHidden = true
+            constants().doSaveBiometricStatus(bStatus: "face")
+            constants().doSaveBiometricStatusOnOff(bStatus: "On")
+            let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("biometriedenabled", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            constants().doSaveBiometricStatusOnOff(bStatus: "Off")
+            let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("makesurefaceidenabled", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
+                self.BiometricView.isHidden = true
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func doTouchID() {
+        constants().APPDEL.isPopup = false
+        var error: NSError?
+        if  LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            self.BiometricView.isHidden = true
+            constants().doSaveBiometricStatus(bStatus: "touch")
+            constants().doSaveBiometricStatusOnOff(bStatus: "On")
+            let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("biometriedenabled", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            constants().doSaveBiometricStatusOnOff(bStatus: "Off")
+            let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("makesuretouchidenabled", comment: ""), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
+                self.BiometricView.isHidden = true
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    @IBAction func doNotNow() {
+        constants().APPDEL.isPopup = false
+        UserDefaults.standard.set(Date(), forKey: "BiometricReminderDate")
+        constants().doSaveBiometricStatus(bStatus: "")
+        self.BiometricView.isHidden = true
     }
 }

@@ -589,11 +589,11 @@ class AddLostItem: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBAction func doSubmit() {
         var aMessage = ""
         if self.txtDateTime.text!.isEmpty {
-            aMessage = NSLocalizedString("selectlostitemdate", comment: "")
+           // aMessage = NSLocalizedString("selectlostitemdate", comment: "")
         } else if self.txtLostItem.text!.isEmpty {
-            aMessage = NSLocalizedString("enteritemname", comment: "")
+           // aMessage = NSLocalizedString("enteritemname", comment: "")
         } else if self.lblLocationText.text!.isEmpty || self.lblLocationText.text! == "--" {
-            aMessage = NSLocalizedString("selectlocation", comment: "")
+           // aMessage = NSLocalizedString("selectlocation", comment: "")
         } else if !self.selectedPlaceID.isEmpty {
             if self.selectedPlaceName.contains("Other") {
                 self.txtAddress1.text = "-"

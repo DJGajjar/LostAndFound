@@ -160,7 +160,7 @@
 "enternewpassword" = "S'il vous plaît entrer nouveau mot de passe";
 "enterconfirmpassword" = "S'il vous plaît entrer Confirmer mot de passe";
 "passwordmismatch" = "Confirmer mot de passe ne correspond pas avec le nouveau mot de passe";
-"passwordlength" = "Chaîne d'une longueur minimum de 6. Le mot de passe doit contenir au moins une lettre majuscule, numéro et caractères spéciaux";
+"passwordlength" = "Chaîne d'une longueur minimum de 6. Le mot de passe doit contenir au moins une lettre majuscule, numéro, Souligner et caractères spéciaux";
 "weakpassword" = "Mot de passe faible";
 "alert" = "Alerte";
 "ok" = "D'accord";
@@ -183,6 +183,7 @@
 "privacysettings" = "Paramètres de confidentialité";
 "termsconditions" = "termes et conditions";
 "changelanguage" = "Changer de langue";
+"face_id" = "visage_identifiant";
 "aboutus" = "À propos de nous";
 "tributeto" = "Hommage à";
 "support" = "Soutien";
@@ -261,6 +262,7 @@
 "enterpassword" = "Veuillez entrer le mot de passe";
 "signinonlysupported" = "Connectez-vous avec Apple est uniquement pris en charge iOS 13 ou versions ultérieures iOS.";
 "biometricfailed" = "Échec de l'authentification biométrique";
+"biometrictitle" = "Biométrique";
 "enteremail" = "S'il vous plaît entrer Email";
 "entermobile" = "S'il vous plaît entrer Mobile Pas";
 "noitemsfavorites" = "Article préféré du marché";

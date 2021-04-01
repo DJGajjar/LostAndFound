@@ -371,8 +371,8 @@ class constants {
 
     //MARK:- Validate Password
     func isStrongPassword(sPassword: String) -> Bool {
-        var passRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$&*]).{6,24}$"
-        passRegex = "^(?=.*[A-Z,a-z])(?=.*[0-9]).{6,24}$"
+        var passRegex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[_])(?=.*[!@#$&*]).{6,24}$"
+        passRegex = "^(?=.*[A-Z,a-z])(?=.*[0-9])(?=.*[_]).{6,24}$"
         let passTest = NSPredicate(format: "SELF MATCHES %@", passRegex)
         return passTest.evaluate(with: sPassword)
     }
@@ -521,7 +521,18 @@ class constants {
         }
         return ""
     }
+    
+    func doGetBiometricStatusOnOff() -> String {
+        if let bStatus = UserDefaults.standard.string(forKey: "biometric_on_off") {
+            return bStatus
+        }
+        return ""
+    }
 
+    func doSaveBiometricStatusOnOff(bStatus: String) {
+        UserDefaults.standard.set(bStatus, forKey:"biometric_on_off")
+    }
+    
     func doSaveBiometricStatus(bStatus: String) {
         UserDefaults.standard.set(bStatus, forKey:"biometricstatus")
     }

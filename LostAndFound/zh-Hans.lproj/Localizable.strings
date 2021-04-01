@@ -183,6 +183,7 @@
 "privacysettings" = "隐私设置";
 "termsconditions" = "条款和条件";
 "changelanguage" = "改变语言";
+"face_id" = "脸型";
 "aboutus" = "关于我们";
 "tributeto" = "献给";
 "support" = "支持";
@@ -261,6 +262,7 @@
 "enterpassword" = "请输入密码";
 "signinonlysupported" = "请用苹果只支持iOS中13或更高版本的iOS版本。";
 "biometricfailed" = "生物特征认证失败";
+"biometrictitle" = "生物识别";
 "enteremail" = "请输入电子邮件";
 "entermobile" = "请输入手机号码";
 "noitemsfavorites" = "从市场最喜欢的项目";

@@ -509,12 +509,14 @@ class LostFoundItemsList: UIViewController, UICollectionViewDelegate, UICollecti
         if mContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             self.BiometricView.isHidden = true
             constants().doSaveBiometricStatus(bStatus: "face")
+            constants().doSaveBiometricStatusOnOff(bStatus: "On")
             let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("biometriedenabled", comment: ""), preferredStyle: .alert)
             let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
             }
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
+            constants().doSaveBiometricStatusOnOff(bStatus: "Off")
             let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("makesurefaceidenabled", comment: ""), preferredStyle: .alert)
             let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
                 self.BiometricView.isHidden = true
@@ -530,12 +532,14 @@ class LostFoundItemsList: UIViewController, UICollectionViewDelegate, UICollecti
         if  LAContext().canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             self.BiometricView.isHidden = true
             constants().doSaveBiometricStatus(bStatus: "touch")
+            constants().doSaveBiometricStatusOnOff(bStatus: "On")
             let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("biometriedenabled", comment: ""), preferredStyle: .alert)
             let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
             }
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
+            constants().doSaveBiometricStatusOnOff(bStatus: "Off")
             let alertController = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: NSLocalizedString("makesuretouchidenabled", comment: ""), preferredStyle: .alert)
             let okAction = UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default) { (action) in
                 self.BiometricView.isHidden = true

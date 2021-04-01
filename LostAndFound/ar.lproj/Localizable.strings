@@ -183,6 +183,7 @@
 "privacysettings" = "إعدادات الخصوصية";
 "termsconditions" = "البنود و الظروف";
 "changelanguage" = "تغيير اللغة";
+"face_id" = "معرف الوجه";
 "aboutus" = "معلومات عن";
 "tributeto" = "تحية ل";
 "support" = "الدعم";
@@ -261,6 +262,7 @@
 "enterpassword" = "يرجى إدخال كلمة المرور";
 "signinonlysupported" = "تسجيل الدخول باستخدام Apple مدعوم فقط في iOS 13 أو إصدارات iOS الأحدث.";
 "biometricfailed" = "فشل المصادقة البيومترية";
+"biometrictitle" = "بصمات";
 "enteremail" = "الرجاء إدخال بريد";
 "entermobile" = "يرجى إدخال رقم الجوال";
 "noitemsfavorites" = "البند المفضلة من السوق";

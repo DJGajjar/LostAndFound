@@ -1768,14 +1768,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C599LJ6Q52;
+				DEVELOPMENT_TEAM = HSNX678QV7;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amir.lostandfound;
+				PRODUCT_BUNDLE_IDENTIFIER = com.venturetrove.bpc.slot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LostAndFound/LostAndFound-Bridging-Header.h";
@@ -1795,14 +1795,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C599LJ6Q52;
+				DEVELOPMENT_TEAM = HSNX678QV7;
 				INFOPLIST_FILE = LostAndFound/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5.13;
-				PRODUCT_BUNDLE_IDENTIFIER = com.amir.lostandfound;
+				PRODUCT_BUNDLE_IDENTIFIER = com.venturetrove.bpc.slot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LostAndFound/LostAndFound-Bridging-Header.h";

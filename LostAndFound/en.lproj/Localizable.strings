@@ -160,7 +160,7 @@
 "enternewpassword" = "Please enter New Password";
 "enterconfirmpassword" = "Please enter Confirm Password";
 "passwordmismatch" = "Confirm Password Not Matched with New Password";
-"passwordlength" = "String with a minimum length of 6. The password must contain at least one Uppercase, Number & Special character";
+"passwordlength" = "String with a minimum length of 6. The password must contain at least one Uppercase, Number, Underscore & Special character";
 "weakpassword" = "Weak Password";
 "alert" = "Alert";
 "ok" = "Ok";
@@ -183,6 +183,7 @@
 "privacysettings" = "Privacy Settings";
 "termsconditions" = "Terms & Conditions";
 "changelanguage" = "Change Language";
+"face_id" = "Face_ID";
 "aboutus" = "About us";
 "tributeto" = "Tribute To";
 "support" = "Support";
@@ -230,6 +231,7 @@
 "photolibrary" = "Photo Library";
 "failedtosend" = "Failed to Send Message";
 "biometriedenabled" = "Biometric Authentication Enabled Successfully";
+"biometrictitle" = "Biometric";
 "makesurefaceidenabled" = "Please make sure your device has Face ID enabled to make use of it for Biometric Authentication Or its not available on your device";
 "makesuretouchidenabled" = "Please make sure your device has Touch ID enabled to make use of it for Biometric Authentication Or its not available on your device";
 "editfounditem" = "Edit Found Item";
